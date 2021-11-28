@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-md-4">
+        <img class="img-fluid" [src]="imgPrfix+movieDetails?.poster_path" alt="">
+    </div>
+    <div class="col-md-8">
+        <h2 class="my-2">{{movieDetails?.title}}{{movieDetails?.name}}</h2>
+        <p class="my-2 secondFontColor">{{movieDetails?.tagline}}</p>
+        <span class="bg-info p-1 rounded mx-2" *ngFor="let gen of movieDetails?.genres">{{gen.name}}</span>
+
+        <p class="my-3">  Vote : {{movieDetails?.vote_average}}</p>
+
+        <p class=" my-3">VoteCount :{{movieDetails?.vote_count}}</p>
+
+        <p class="my-3">Popularity: {{movieDetails?.popularity}}</p>
+
+        <p class="my-3">Released Data: {{movieDetails?.release_date}}</p>
+
+        <span class="my-3" *ngFor="let gen of movieDetails?.spoken_languages"> Language: {{gen.english_name}}</span>
+
+        <p class="my-2 lead secondFontColor">{{movieDetails?.overview}}</p>
+    </div>
+</div>

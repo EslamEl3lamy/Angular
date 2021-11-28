@@ -1,0 +1,41 @@
+
+<div class="py-5">
+    <input [(ngModel)] = "term" class="w-50 form-control m-auto">
+</div>
+
+
+<div class="row my-2">
+    <div class="col-md-4">
+        <div class="brdr w-25 my-3"></div>
+        <h2>Trending<br>
+            Movies <br>
+            To Watch Nowa
+        </h2>
+        <div class="brdr w-100 my-3"></div>
+    </div>
+    <div *ngFor="let movie of trendigMovie |search:term" class="col-md-2 position-relative">
+        <div [routerLink]="['/movieDetails', movie.media_type ,movie.id]" class="movie">
+            <img [src]="imgPrfix+movie.poster_path" class="img-fluid my-3">
+            <h3 class="h6">{{movie.title}}{{movie.name}}</h3>
+            <div class="vote">{{movie.vote_average}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="row my-2">
+    <div class="col-md-4">
+        <div class="brdr w-25 my-3"></div>
+        <h2>Trending<br>
+            Tv Shows <br>
+            To Watch Now
+        </h2>
+        <div class="brdr w-100 my-3"></div>
+    </div>
+    <div *ngFor="let tv of trendigTv" class="col-md-2 position-relative">
+        <div class="tv">
+            <img [src]="imgPrfix+tv.poster_path" class="img-fluid my-3">
+            <h3 class="h6">{{tv.title}}{{tv.name}}</h3>
+            <div class="vote">{{tv.vote_average}}</div>
+        </div>
+    </div>
+</div>
